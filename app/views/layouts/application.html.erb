@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Red</title>
+    <%= csrf_meta_tags %>
+    <%= action_cable_meta_tag %>
+    <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.teal-red.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  </head>
+
+  <body>
+    <div class="mdl-layout mdl-js-layout">
+      <%= render "partials/nav" %>
+      <main class="mdl-layout__content">
+        <div class="page-content"><%= yield %></div>
+      </main>
+    </div>
+    <p style="<%= 'display:none;' if notice.nil? && alert.nil? %>">
+      <%= notice %>
+      <%= alert %>
+    </p>
+  </body>
+</html>

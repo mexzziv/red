@@ -1,0 +1,10 @@
+%header.mdl-layout__header.mdl-layout__header--scroll
+  .mdl-layout__header-row
+    %span.mdl-layout-title Red
+    .mdl-layout-spacer
+    %nav.mdl-navigation
+      -if user_signed_in?
+        = link_to "Cerrar Sesion",destroy_user_session_path,method: :delete,class:"white-text"
+.mdl-layout__drawer
+  %span.mdl-layout-title Red
+  %nav.mdl-navigation
